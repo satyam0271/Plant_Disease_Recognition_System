@@ -23,11 +23,34 @@ body {
     border-radius: 10px;
 }
 
+.table-responsive {
+    overflow-x: auto;
+}
+
+td {
+    word-break: break-word;
+}
+
 /* Desktop only */
 @media (min-width: 992px) {
     .result-img {
         max-width: 400px;   /* adjust size here */
         max-height: 300px;
         object-fit: contain;
+    }
+}
+
+/* Mobile Only */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    td img {
+        max-width: 60px !important;
+    }
+
+    th, td {
+        padding : 6px;
     }
 }
