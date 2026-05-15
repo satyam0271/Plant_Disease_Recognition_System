@@ -6,7 +6,6 @@ from database import init_db, save_prediction, get_recent_predictions
 import numpy as np
 from remedies import REMEDIES
 
-print("Starting Flask app...")
 
 app = Flask(__name__)
 app.secret_key = 'plant_disease_secret_key'
@@ -20,7 +19,6 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 model = PlantDiseaseModel()
 init_db()
 
-print("Model loaded successfully")
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp'}
 
