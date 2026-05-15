@@ -1,0 +1,33 @@
+
+body {
+    background: #f5f7fa;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.navbar {
+    background: #198754;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+}
+
+
+.result-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Desktop only */
+@media (min-width: 992px) {
+    .result-img {
+        max-width: 400px;   /* adjust size here */
+        max-height: 300px;
+        object-fit: contain;
+    }
+}

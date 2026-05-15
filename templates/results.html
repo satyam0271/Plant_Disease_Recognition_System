@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <!-- Image -->
+    <div class="col-md-6">
+        <div class="card shadow p-3 text-center">
+            <h5>Uploaded Image</h5>
+            <img src="{{ image_path }}" class="img-fluid result-img">
+        </div>
+    </div>
+
+    <!-- Prediction -->
+    <div class="col-md-6">
+        <div class="card shadow p-4">
+
+            <h4 class="mb-3">Prediction Result</h4>
+
+            <h5 class="text-success">{{ predicted_class }}</h5>
+
+            <!-- Progress -->
+            <div class="progress mt-3" style="height: 25px;">
+                <div class="progress-bar bg-success"
+                     style="width: {{ confidence }}%;">
+                    {{ confidence }}%
+                </div>
+            </div>
+
+            <p class="mt-2"><strong>{{ confidence }}% Confidence</strong></p>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Remedy Section -->
+<div class="card mt-4 p-4 shadow">
+
+    <h4>🌿 Disease Information</h4>
+
+    <p>{{ remedy.description }}</p>
+
+    <h5>Treatment</h5>
+    <ul>
+        {% for step in remedy.treatment %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ul>
+
+    <h5>Prevention</h5>
+    <ul>
+        {% for step in remedy.prevention %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+<div class="text-center mt-4">
+    <a href="/" class="btn btn-success btn-lg">
+        Try Another Image
+    </a>
+</div>
+
+{% endblock %}
