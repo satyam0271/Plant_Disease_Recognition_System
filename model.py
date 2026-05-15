@@ -49,7 +49,7 @@ IMG_SIZE = 224
 
 class PlantDiseaseModel:
     def __init__(self):
-        self.model = tf.keras.models.load_model("model/plant_disease_model_fineTuned.h5")
+        self.model = tf.keras.models.load_model("model/plant_disease_model_2.0.keras")
 
     def preprocess_image(self, image_path):
         img = cv2.imread(image_path)
