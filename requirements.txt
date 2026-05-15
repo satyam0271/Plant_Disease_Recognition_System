@@ -1,8 +1,8 @@
-flask==3.0.0
-gunicorn==21.2.0
-numpy==1.24.3
-pillow==10.0.1
-opencv-python-headless==4.8.1.78
+flask
+gunicorn
+numpy
+pillow
+opencv-python-headless
 tensorflow==2.21.0
-setuptools==68.2.2
+setuptools
 wheel
