@@ -4,6 +4,4 @@ numpy
 pillow
 opencv-python-headless
 tensorflow==2.21.0
-keras==3.14.1
-setuptools
-wheel
+h5py
