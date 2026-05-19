@@ -49,14 +49,14 @@ IMG_SIZE = 224
 
 class PlantDiseaseModel:
     def __init__(self):
-        self.model = tf.keras.models.load_model("model/plant_disease_model_2.0.keras")
+        self.model = tf.keras.models.load_model("model/plant_disease_model2.keras")
 
     def preprocess_image(self, image_path):
         img = cv2.imread(image_path)
         if img is None:
             raise ValueError(f"Could not read image: {image_path}")
         img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
-        img = img / 255.0
+        # img = img / 255.0
         img = np.expand_dims(img, axis=0)
         return img
 
