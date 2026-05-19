@@ -1,0 +1,9 @@
+__pycache__/
+uploads/
+static/uploads/
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.bmp
+

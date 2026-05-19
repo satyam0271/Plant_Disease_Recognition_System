@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.keras.preprocessing import image
 import numpy as np
 import cv2
 
@@ -52,13 +53,15 @@ class PlantDiseaseModel:
         self.model = tf.keras.models.load_model("model/plant_disease_model2.keras")
 
     def preprocess_image(self, image_path):
-        img = cv2.imread(image_path)
+        # img = cv2.imread(image_path)
+        img = image.load_img(image_path, target_size=(IMG_SIZE,IMG_SIZE))
         if img is None:
             raise ValueError(f"Could not read image: {image_path}")
-        img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
+        # img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
         # img = img / 255.0
-        img = np.expand_dims(img, axis=0)
-        return img
+        img_array = image.img_to_array(img)
+        img_array = np.expand_dims(img_array, axis=0)
+        return img_array
 
     def predict(self, image_path):
         img = self.preprocess_image(image_path)
