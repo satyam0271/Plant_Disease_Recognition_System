@@ -59,7 +59,9 @@ def predict():
         })
         
         # Save to database
+        # print(confidence)
         confidence = round(confidence * 100, 1)
+        # print(confidence)
         save_prediction(filename, predicted_class, float(confidence))
         # print("Saving:", filename, predicted_class, confidence)
         
